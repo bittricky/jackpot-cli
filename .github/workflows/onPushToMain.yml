@@ -11,8 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-      - name: Install pnpm
-        run: npm install -g pnpm
+      - name: Install specific version of pnpm
+        run: npm install -g pnpm@8.15.6
       - name: Check if version already exists
         id: version-check
         run: |
