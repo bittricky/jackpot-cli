@@ -2,12 +2,9 @@
 
 > Do you feel lucky? Well... Let's roll the dice and find out 🎲.
 
-A Command line tool to generate global lottery numbers
+A Command line tool to generate lottery numbers
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-
-<!-- [![Version](https://img.shields.io/npm/v/lottery-cli.svg)](https://npmjs.org/package/lottery-cli)
-[![Downloads/week](https://img.shields.io/npm/dw/lottery-cli.svg)](https://npmjs.org/package/lottery-cli) -->
 
 <!-- toc -->
 
@@ -62,7 +59,7 @@ EXAMPLES
   $ lottery generate --lotto megamillions
 ```
 
-_See code: [src/commands/hello/index.ts](https://github.com/bittricky/lottery-cli/blob/v0.0.0/src/commands/generate.ts)_
+_See code: [src/commands/generate.ts](https://github.com/bittricky/lottery-cli/blob/v0.0.0/src/commands/generate.ts)_
 
 ## `lottery help [COMMAND]`
 
