@@ -1,20 +1,22 @@
-lottery-cli
-=================
+# lottery-cli
 
 Command line tool to generate global lottery numbers
 
-
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
-[![Version](https://img.shields.io/npm/v/lottery-cli.svg)](https://npmjs.org/package/lottery-cli)
-[![Downloads/week](https://img.shields.io/npm/dw/lottery-cli.svg)](https://npmjs.org/package/lottery-cli)
 
+<!-- [![Version](https://img.shields.io/npm/v/lottery-cli.svg)](https://npmjs.org/package/lottery-cli)
+[![Downloads/week](https://img.shields.io/npm/dw/lottery-cli.svg)](https://npmjs.org/package/lottery-cli) -->
 
 <!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [Usage](#usage)
+- [Commands](#commands)
 <!-- tocstop -->
+
 # Usage
+
 <!-- usage -->
+
 ```sh-session
 $ npm install -g lottery-cli
 $ lottery COMMAND
@@ -26,22 +28,26 @@ USAGE
   $ lottery COMMAND
 ...
 ```
+
 <!-- usagestop -->
+
 # Commands
+
 <!-- commands -->
-* [`lottery hello PERSON`](#lottery-hello-person)
-* [`lottery hello world`](#lottery-hello-world)
-* [`lottery help [COMMAND]`](#lottery-help-command)
-* [`lottery plugins`](#lottery-plugins)
-* [`lottery plugins add PLUGIN`](#lottery-plugins-add-plugin)
-* [`lottery plugins:inspect PLUGIN...`](#lottery-pluginsinspect-plugin)
-* [`lottery plugins install PLUGIN`](#lottery-plugins-install-plugin)
-* [`lottery plugins link PATH`](#lottery-plugins-link-path)
-* [`lottery plugins remove [PLUGIN]`](#lottery-plugins-remove-plugin)
-* [`lottery plugins reset`](#lottery-plugins-reset)
-* [`lottery plugins uninstall [PLUGIN]`](#lottery-plugins-uninstall-plugin)
-* [`lottery plugins unlink [PLUGIN]`](#lottery-plugins-unlink-plugin)
-* [`lottery plugins update`](#lottery-plugins-update)
+
+- [`lottery hello PERSON`](#lottery-hello-person)
+- [`lottery hello world`](#lottery-hello-world)
+- [`lottery help [COMMAND]`](#lottery-help-command)
+- [`lottery plugins`](#lottery-plugins)
+- [`lottery plugins add PLUGIN`](#lottery-plugins-add-plugin)
+- [`lottery plugins:inspect PLUGIN...`](#lottery-pluginsinspect-plugin)
+- [`lottery plugins install PLUGIN`](#lottery-plugins-install-plugin)
+- [`lottery plugins link PATH`](#lottery-plugins-link-path)
+- [`lottery plugins remove [PLUGIN]`](#lottery-plugins-remove-plugin)
+- [`lottery plugins reset`](#lottery-plugins-reset)
+- [`lottery plugins uninstall [PLUGIN]`](#lottery-plugins-uninstall-plugin)
+- [`lottery plugins unlink [PLUGIN]`](#lottery-plugins-unlink-plugin)
+- [`lottery plugins update`](#lottery-plugins-update)
 
 ## `lottery hello PERSON`
 
@@ -393,4 +399,5 @@ DESCRIPTION
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.1.3/src/commands/plugins/update.ts)_
+
 <!-- commandsstop -->
