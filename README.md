@@ -99,3 +99,5 @@ The `lottery-cli` command-line tool supports generating numbers for the followin
 | **Canada Lotto Max** (Canada)             | Fridays                          | 7 numbers from 1 to 50                                     |
 | **France Loto** (France)                  | Mondays, Wednesdays, Saturdays   | 5 numbers from 1 to 49 and 1 Lucky Number from 1 to 10     |
 | **German Lotto (Lotto 6aus49)** (Germany) | Wednesdays, Saturdays            | 6 numbers from 1 to 49 and 1 Superzahl from 0 to 9         |
+
+More lotteries will be added in the future. If you'd like to see a specific lottery added, please [create an issue](https://github.com/bittricky/lottery-cli/issues/new) in the repository.
