@@ -47,7 +47,7 @@ USAGE
   $ lottery generate -l <value>
 
 ARGUMENTS
-  PERSON  Person to say hello to
+  LOTTERY  Name of the major lottery
 
 FLAGS
   -l, --lotto=<value>  (required) name of major lottery
@@ -80,3 +80,22 @@ DESCRIPTION
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.0.22/src/commands/help.ts)_
+
+## Supported Lotteries
+
+The `lottery-cli` command-line tool supports generating numbers for the following major global lotteries:
+
+| Lottery                                   | Draw Days                        | Numbers                                                    |
+| ----------------------------------------- | -------------------------------- | ---------------------------------------------------------- |
+| **Powerball** (USA)                       | Wednesdays, Saturdays            | 5 numbers from 1 to 69 and 1 Powerball number from 1 to 26 |
+| **Mega Millions** (USA)                   | Tuesdays, Fridays                | 5 numbers from 1 to 70 and 1 Mega Ball number from 1 to 25 |
+| **EuroMillions** (Europe)                 | Tuesdays, Fridays                | 5 numbers from 1 to 50 and 2 Lucky Stars from 1 to 12      |
+| **UK National Lottery (Lotto)** (UK)      | Wednesdays, Saturdays            | 6 numbers from 1 to 59                                     |
+| **El Gordo** (Spain)                      | Weekly, special draw in December | 5 numbers from 0 to 54                                     |
+| **SuperEnalotto** (Italy)                 | Tuesdays, Thursdays, Saturdays   | 6 numbers from 1 to 90                                     |
+| **Australian Powerball** (Australia)      | Thursdays                        | 7 numbers from 1 to 35 and 1 Powerball number from 1 to 20 |
+| **Oz Lotto** (Australia)                  | Tuesdays                         | 7 numbers from 1 to 45                                     |
+| **Canada Lotto 6/49** (Canada)            | Wednesdays, Saturdays            | 6 numbers from 1 to 49                                     |
+| **Canada Lotto Max** (Canada)             | Fridays                          | 7 numbers from 1 to 50                                     |
+| **France Loto** (France)                  | Mondays, Wednesdays, Saturdays   | 5 numbers from 1 to 49 and 1 Lucky Number from 1 to 10     |
+| **German Lotto (Lotto 6aus49)** (Germany) | Wednesdays, Saturdays            | 6 numbers from 1 to 49 and 1 Superzahl from 0 to 9         |

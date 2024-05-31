@@ -1,7 +1,7 @@
 {
   "name": "lottery-cli",
-  "description": "Command line tool to generate global lottery numbers",
-  "version": "0.0.0",
+  "description": "Command line tool to generate lottery numbers for major lotteries",
+  "version": "1.0.0",
   "author": "Mitul Patel",
   "bin": {
     "lottery": "./bin/run.js"
@@ -52,11 +52,7 @@
       "@oclif/plugin-plugins"
     ],
     "topicSeparator": " ",
-    "topics": {
-      "hello": {
-        "description": "Say hello to the world and others"
-      }
-    }
+    "topics": {}
   },
   "repository": "bittricky/lottery-cli",
   "scripts": {
