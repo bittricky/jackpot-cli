@@ -5,6 +5,8 @@
 A command line tool to generate jackpot numbers
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
+[![Version](https://img.shields.io/npm/v/jackpot-cli.svg)](https://npmjs.org/package/jackpot-cli)
+[![Downloads/week](https://img.shields.io/npm/dw/jackpot-cli.svg)](https://www.npmjs.com/package/jackpot-cli)
 
 <!-- toc -->
 
@@ -51,17 +53,17 @@ USAGE
 
 ## `jackpot generate`
 
-Generate jackpot numbers for major global lotteries
+Generate lottery numbers for major global lotteries
 
 ```
 USAGE
   $ jackpot generate -l <value>
 
 FLAGS
-  -l, --lotto=<value>  (required) type of jackpot
+  -l, --lotto=<value>  (required) type of lottery
 
 DESCRIPTION
-  Generate jackpot numbers for major global lotteries
+  Generate lottery numbers for major global lotteries
 
 EXAMPLES
   $ jackpot generate --lotto powerball
@@ -161,8 +163,8 @@ DESCRIPTION
 
   Installation of a user-installed plugin will override a core plugin.
 
-  Use the jackpot_NPM_LOG_LEVEL environment variable to set the npm loglevel.
-  Use the jackpot_NPM_REGISTRY environment variable to set the npm registry.
+  Use the JACKPOT_NPM_LOG_LEVEL environment variable to set the npm loglevel.
+  Use the JACKPOT_NPM_REGISTRY environment variable to set the npm registry.
 
 ALIASES
   $ jackpot plugins:add
@@ -235,8 +237,8 @@ DESCRIPTION
 
   Installation of a user-installed plugin will override a core plugin.
 
-  Use the jackpot_NPM_LOG_LEVEL environment variable to set the npm loglevel.
-  Use the jackpot_NPM_REGISTRY environment variable to set the npm registry.
+  Use the JACKPOT_NPM_LOG_LEVEL environment variable to set the npm loglevel.
+  Use the JACKPOT_NPM_REGISTRY environment variable to set the npm registry.
 
 ALIASES
   $ jackpot plugins:add
