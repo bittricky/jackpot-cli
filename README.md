@@ -2,7 +2,7 @@
 
 > Do you feel lucky? Well... Let's roll the dice and find out 🎲.
 
-A command line tool to generate lottery numbers
+A command line tool to generate jackpot numbers
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 
@@ -11,6 +11,7 @@ A command line tool to generate lottery numbers
 - [jackpot-cli](#jackpot-cli)
 - [Usage](#usage)
 - [Commands](#commands)
+- [Supported Lotteries](#supported-lotteries)
 <!-- tocstop -->
 
 # Usage
@@ -18,14 +19,14 @@ A command line tool to generate lottery numbers
 <!-- usage -->
 
 ```sh-session
-$ npm install -g lottery-cli
-$ lottery COMMAND
+$ npm install -g jackpot-cli
+$ jackpot COMMAND
 running command...
-$ lottery (--version)
-lottery-cli/1.0.0 darwin-x64 node-v20.9.0
-$ lottery --help [COMMAND]
+$ jackpot (--version)
+jackpot-cli/1.0.0 darwin-x64 node-v20.9.0
+$ jackpot --help [COMMAND]
 USAGE
-  $ lottery COMMAND
+  $ jackpot COMMAND
 ...
 ```
 
@@ -35,68 +36,68 @@ USAGE
 
 <!-- commands -->
 
-- [`lottery generate`](#lottery-generate)
-- [`lottery help [COMMAND]`](#lottery-help-command)
-- [`lottery plugins`](#lottery-plugins)
-- [`lottery plugins:add PLUGIN`](#lottery-pluginsadd-plugin)
-- [`lottery plugins:inspect PLUGIN...`](#lottery-pluginsinspect-plugin)
-- [`lottery plugins:install PLUGIN`](#lottery-pluginsinstall-plugin)
-- [`lottery plugins:link PATH`](#lottery-pluginslink-path)
-- [`lottery plugins:remove [PLUGIN]`](#lottery-pluginsremove-plugin)
-- [`lottery plugins:reset`](#lottery-pluginsreset)
-- [`lottery plugins:uninstall [PLUGIN]`](#lottery-pluginsuninstall-plugin)
-- [`lottery plugins:unlink [PLUGIN]`](#lottery-pluginsunlink-plugin)
-- [`lottery plugins:update`](#lottery-pluginsupdate)
+- [`jackpot generate`](#jackpot-generate)
+- [`jackpot help [COMMAND]`](#jackpot-help-command)
+- [`jackpot plugins`](#jackpot-plugins)
+- [`jackpot plugins:add PLUGIN`](#jackpot-pluginsadd-plugin)
+- [`jackpot plugins:inspect PLUGIN...`](#jackpot-pluginsinspect-plugin)
+- [`jackpot plugins:install PLUGIN`](#jackpot-pluginsinstall-plugin)
+- [`jackpot plugins:link PATH`](#jackpot-pluginslink-path)
+- [`jackpot plugins:remove [PLUGIN]`](#jackpot-pluginsremove-plugin)
+- [`jackpot plugins:reset`](#jackpot-pluginsreset)
+- [`jackpot plugins:uninstall [PLUGIN]`](#jackpot-pluginsuninstall-plugin)
+- [`jackpot plugins:unlink [PLUGIN]`](#jackpot-pluginsunlink-plugin)
+- [`jackpot plugins:update`](#jackpot-pluginsupdate)
 
-## `lottery generate`
+## `jackpot generate`
 
-Generate lottery numbers for major global lotteries
+Generate jackpot numbers for major global lotteries
 
 ```
 USAGE
-  $ lottery generate -l <value>
+  $ jackpot generate -l <value>
 
 FLAGS
-  -l, --lotto=<value>  (required) type of lottery
+  -l, --lotto=<value>  (required) type of jackpot
 
 DESCRIPTION
-  Generate lottery numbers for major global lotteries
+  Generate jackpot numbers for major global lotteries
 
 EXAMPLES
-  $ lottery generate --lotto powerball
+  $ jackpot generate --lotto powerball
 
-  $ lottery generate --lotto megamillions
+  $ jackpot generate --lotto megamillions
 
-  $ lottery generate --lotto euromillions
+  $ jackpot generate --lotto euromillions
 
-  $ lottery generate --lotto uklotto
+  $ jackpot generate --lotto uklotto
 
-  $ lottery generate --lotto elgordo
+  $ jackpot generate --lotto elgordo
 
-  $ lottery generate --lotto superenalotto
+  $ jackpot generate --lotto superenalotto
 
-  $ lottery generate --lotto auspowerball
+  $ jackpot generate --lotto auspowerball
 
-  $ lottery generate --lotto ozlotto
+  $ jackpot generate --lotto ozlotto
 
-  $ lottery generate --lotto canada649
+  $ jackpot generate --lotto canada649
 
-  $ lottery generate --lotto canadamax
+  $ jackpot generate --lotto canadamax
 
-  $ lottery generate --lotto franceloto
+  $ jackpot generate --lotto franceloto
 
-  $ lottery generate --lotto germanlotto
+  $ jackpot generate --lotto germanlotto
 ```
 
-_See code: [src/commands/generate.ts](https://github.com/bittricky/lottery-cli/blob/v1.0.0/src/commands/generate.ts)_
+_See code: [src/commands/generate.ts](https://github.com/bittricky/jackpot-cli/blob/v1.0.0/src/commands/generate.ts)_
 
-## `lottery help [COMMAND]`
+## `jackpot help [COMMAND]`
 
-Display help for lottery.
+Display help for jackpot.
 
 ```
 USAGE
-  $ lottery help [COMMAND...] [-n]
+  $ jackpot help [COMMAND...] [-n]
 
 ARGUMENTS
   COMMAND...  Command to show help for.
@@ -105,18 +106,18 @@ FLAGS
   -n, --nested-commands  Include all nested commands in the output.
 
 DESCRIPTION
-  Display help for lottery.
+  Display help for jackpot.
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.0.22/src/commands/help.ts)_
 
-## `lottery plugins`
+## `jackpot plugins`
 
 List installed plugins.
 
 ```
 USAGE
-  $ lottery plugins [--json] [--core]
+  $ jackpot plugins [--json] [--core]
 
 FLAGS
   --core  Show core plugins.
@@ -128,18 +129,18 @@ DESCRIPTION
   List installed plugins.
 
 EXAMPLES
-  $ lottery plugins
+  $ jackpot plugins
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.1.3/src/commands/plugins/index.ts)_
 
-## `lottery plugins:add PLUGIN`
+## `jackpot plugins:add PLUGIN`
 
-Installs a plugin into lottery.
+Installs a plugin into jackpot.
 
 ```
 USAGE
-  $ lottery plugins:add PLUGIN... [--json] [-f] [-h] [-s | -v]
+  $ jackpot plugins:add PLUGIN... [--json] [-f] [-h] [-s | -v]
 
 ARGUMENTS
   PLUGIN...  Plugin to install.
@@ -154,39 +155,39 @@ GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  Installs a plugin into lottery.
+  Installs a plugin into jackpot.
 
-  Uses bundled npm executable to install plugins into /Users/bittricky/.local/share/lottery
+  Uses bundled npm executable to install plugins into /Users/bittricky/.local/share/jackpot
 
   Installation of a user-installed plugin will override a core plugin.
 
-  Use the LOTTERY_NPM_LOG_LEVEL environment variable to set the npm loglevel.
-  Use the LOTTERY_NPM_REGISTRY environment variable to set the npm registry.
+  Use the jackpot_NPM_LOG_LEVEL environment variable to set the npm loglevel.
+  Use the jackpot_NPM_REGISTRY environment variable to set the npm registry.
 
 ALIASES
-  $ lottery plugins:add
+  $ jackpot plugins:add
 
 EXAMPLES
   Install a plugin from npm registry.
 
-    $ lottery plugins:add myplugin
+    $ jackpot plugins:add myplugin
 
   Install a plugin from a github url.
 
-    $ lottery plugins:add https://github.com/someuser/someplugin
+    $ jackpot plugins:add https://github.com/someuser/someplugin
 
   Install a plugin from a github slug.
 
-    $ lottery plugins:add someuser/someplugin
+    $ jackpot plugins:add someuser/someplugin
 ```
 
-## `lottery plugins:inspect PLUGIN...`
+## `jackpot plugins:inspect PLUGIN...`
 
 Displays installation properties of a plugin.
 
 ```
 USAGE
-  $ lottery plugins:inspect PLUGIN...
+  $ jackpot plugins:inspect PLUGIN...
 
 ARGUMENTS
   PLUGIN...  [default: .] Plugin to inspect.
@@ -202,18 +203,18 @@ DESCRIPTION
   Displays installation properties of a plugin.
 
 EXAMPLES
-  $ lottery plugins:inspect myplugin
+  $ jackpot plugins:inspect myplugin
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.1.3/src/commands/plugins/inspect.ts)_
 
-## `lottery plugins:install PLUGIN`
+## `jackpot plugins:install PLUGIN`
 
-Installs a plugin into lottery.
+Installs a plugin into jackpot.
 
 ```
 USAGE
-  $ lottery plugins:install PLUGIN... [--json] [-f] [-h] [-s | -v]
+  $ jackpot plugins:install PLUGIN... [--json] [-f] [-h] [-s | -v]
 
 ARGUMENTS
   PLUGIN...  Plugin to install.
@@ -228,41 +229,41 @@ GLOBAL FLAGS
   --json  Format output as json.
 
 DESCRIPTION
-  Installs a plugin into lottery.
+  Installs a plugin into jackpot.
 
-  Uses bundled npm executable to install plugins into /Users/bittricky/.local/share/lottery
+  Uses bundled npm executable to install plugins into /Users/bittricky/.local/share/jackpot
 
   Installation of a user-installed plugin will override a core plugin.
 
-  Use the LOTTERY_NPM_LOG_LEVEL environment variable to set the npm loglevel.
-  Use the LOTTERY_NPM_REGISTRY environment variable to set the npm registry.
+  Use the jackpot_NPM_LOG_LEVEL environment variable to set the npm loglevel.
+  Use the jackpot_NPM_REGISTRY environment variable to set the npm registry.
 
 ALIASES
-  $ lottery plugins:add
+  $ jackpot plugins:add
 
 EXAMPLES
   Install a plugin from npm registry.
 
-    $ lottery plugins:install myplugin
+    $ jackpot plugins:install myplugin
 
   Install a plugin from a github url.
 
-    $ lottery plugins:install https://github.com/someuser/someplugin
+    $ jackpot plugins:install https://github.com/someuser/someplugin
 
   Install a plugin from a github slug.
 
-    $ lottery plugins:install someuser/someplugin
+    $ jackpot plugins:install someuser/someplugin
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.1.3/src/commands/plugins/install.ts)_
 
-## `lottery plugins:link PATH`
+## `jackpot plugins:link PATH`
 
 Links a plugin into the CLI for development.
 
 ```
 USAGE
-  $ lottery plugins:link PATH [-h] [--install] [-v]
+  $ jackpot plugins:link PATH [-h] [--install] [-v]
 
 ARGUMENTS
   PATH  [default: .] path to plugin
@@ -281,18 +282,18 @@ DESCRIPTION
 
 
 EXAMPLES
-  $ lottery plugins:link myplugin
+  $ jackpot plugins:link myplugin
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.1.3/src/commands/plugins/link.ts)_
 
-## `lottery plugins:remove [PLUGIN]`
+## `jackpot plugins:remove [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ lottery plugins:remove [PLUGIN...] [-h] [-v]
+  $ jackpot plugins:remove [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
   PLUGIN...  plugin to uninstall
@@ -305,20 +306,20 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ lottery plugins:unlink
-  $ lottery plugins:remove
+  $ jackpot plugins:unlink
+  $ jackpot plugins:remove
 
 EXAMPLES
-  $ lottery plugins:remove myplugin
+  $ jackpot plugins:remove myplugin
 ```
 
-## `lottery plugins:reset`
+## `jackpot plugins:reset`
 
 Remove all user-installed and linked plugins.
 
 ```
 USAGE
-  $ lottery plugins:reset [--hard] [--reinstall]
+  $ jackpot plugins:reset [--hard] [--reinstall]
 
 FLAGS
   --hard       Delete node_modules and package manager related files in addition to uninstalling plugins.
@@ -327,13 +328,13 @@ FLAGS
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.1.3/src/commands/plugins/reset.ts)_
 
-## `lottery plugins:uninstall [PLUGIN]`
+## `jackpot plugins:uninstall [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ lottery plugins:uninstall [PLUGIN...] [-h] [-v]
+  $ jackpot plugins:uninstall [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
   PLUGIN...  plugin to uninstall
@@ -346,22 +347,22 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ lottery plugins:unlink
-  $ lottery plugins:remove
+  $ jackpot plugins:unlink
+  $ jackpot plugins:remove
 
 EXAMPLES
-  $ lottery plugins:uninstall myplugin
+  $ jackpot plugins:uninstall myplugin
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.1.3/src/commands/plugins/uninstall.ts)_
 
-## `lottery plugins:unlink [PLUGIN]`
+## `jackpot plugins:unlink [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ lottery plugins:unlink [PLUGIN...] [-h] [-v]
+  $ jackpot plugins:unlink [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
   PLUGIN...  plugin to uninstall
@@ -374,20 +375,20 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ lottery plugins:unlink
-  $ lottery plugins:remove
+  $ jackpot plugins:unlink
+  $ jackpot plugins:remove
 
 EXAMPLES
-  $ lottery plugins:unlink myplugin
+  $ jackpot plugins:unlink myplugin
 ```
 
-## `lottery plugins:update`
+## `jackpot plugins:update`
 
 Update installed plugins.
 
 ```
 USAGE
-  $ lottery plugins:update [-h] [-v]
+  $ jackpot plugins:update [-h] [-v]
 
 FLAGS
   -h, --help     Show CLI help.
@@ -401,39 +402,39 @@ _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/
 
 <!-- commandsstop -->
 
-- [`lottery generate`](#lottery-generate)
-- [`lottery help [COMMAND]`](#lottery-help-command)
+- [`jackpot generate`](#jackpot-generate)
+- [`jackpot help [COMMAND]`](#jackpot-help-command)
 
-## `lottery generate`
+## `jackpot generate`
 
-Generate lottery numbers for major global lotteries
+Generate jackpot numbers for major global lotteries
 
 ```
 USAGE
-  $ lottery generate -l <value>
+  $ jackpot generate -l <value>
 
 ARGUMENTS
-  LOTTERY  Name of the major lottery
+  jackpot  Name of the major jackpot
 
 FLAGS
-  -l, --lotto=<value>  (required) name of major lottery
+  -l, --lotto=<value>  (required) name of major jackpot
 
 DESCRIPTION
-  Generate lottery numbers for major global lotteries
+  Generate jackpot numbers for major global lotteries
 
 EXAMPLES
-  $ lottery generate --lotto megamillions
+  $ jackpot generate --lotto megamillions
 ```
 
-_See code: [src/commands/generate.ts](https://github.com/bittricky/lottery-cli/blob/v0.0.0/src/commands/generate.ts)_
+_See code: [src/commands/generate.ts](https://github.com/bittricky/jackpot-cli/blob/v0.0.0/src/commands/generate.ts)_
 
-## `lottery help [COMMAND]`
+## `jackpot help [COMMAND]`
 
-Display help for lottery.
+Display help for jackpot.
 
 ```
 USAGE
-  $ lottery help [COMMAND...] [-n]
+  $ jackpot help [COMMAND...] [-n]
 
 ARGUMENTS
   COMMAND...  Command to show help for.
@@ -442,21 +443,21 @@ FLAGS
   -n, --nested-commands  Include all nested commands in the output.
 
 DESCRIPTION
-  Display help for lottery.
+  Display help for jackpot.
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.0.22/src/commands/help.ts)_
 
 ## Supported Lotteries
 
-The `lottery-cli` command-line tool supports generating numbers for the following major global lotteries:
+The `jackpot-cli` command-line tool supports generating numbers for the following major global lotteries:
 
-| Lottery                                   | Draw Days                        | Numbers                                                    |
+| jackpot                                   | Draw Days                        | Numbers                                                    |
 | ----------------------------------------- | -------------------------------- | ---------------------------------------------------------- |
 | **Powerball** (USA)                       | Wednesdays, Saturdays            | 5 numbers from 1 to 69 and 1 Powerball number from 1 to 26 |
 | **Mega Millions** (USA)                   | Tuesdays, Fridays                | 5 numbers from 1 to 70 and 1 Mega Ball number from 1 to 25 |
 | **EuroMillions** (Europe)                 | Tuesdays, Fridays                | 5 numbers from 1 to 50 and 2 Lucky Stars from 1 to 12      |
-| **UK National Lottery (Lotto)** (UK)      | Wednesdays, Saturdays            | 6 numbers from 1 to 59                                     |
+| **UK National jackpot (Lotto)** (UK)      | Wednesdays, Saturdays            | 6 numbers from 1 to 59                                     |
 | **El Gordo** (Spain)                      | Weekly, special draw in December | 5 numbers from 0 to 54                                     |
 | **SuperEnalotto** (Italy)                 | Tuesdays, Thursdays, Saturdays   | 6 numbers from 1 to 90                                     |
 | **Australian Powerball** (Australia)      | Thursdays                        | 7 numbers from 1 to 35 and 1 Powerball number from 1 to 20 |
@@ -466,4 +467,4 @@ The `lottery-cli` command-line tool supports generating numbers for the followin
 | **France Loto** (France)                  | Mondays, Wednesdays, Saturdays   | 5 numbers from 1 to 49 and 1 Lucky Number from 1 to 10     |
 | **German Lotto (Lotto 6aus49)** (Germany) | Wednesdays, Saturdays            | 6 numbers from 1 to 49 and 1 Superzahl from 0 to 9         |
 
-More lotteries will be added in the future. If you'd like to see a specific lottery added, please [create an issue](https://github.com/bittricky/lottery-cli/issues/new) in the repository.
+More lotteries will be added in the future. If you'd like to see a specific jackpot added, please [create an issue](https://github.com/bittricky/jackpot-cli/issues/new) in the repository.
