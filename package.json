@@ -1,5 +1,5 @@
 {
-  "name": "lottery-cli",
+  "name": "jackpot-cli",
   "description": "Command line tool to generate lottery numbers for major lotteries",
   "version": "1.0.0",
   "author": {
@@ -8,9 +8,9 @@
 		"url": "https://mitulpa.tel"
 	},
   "bin": {
-    "lottery": "./bin/run.js"
+    "jackpot": "./bin/run.js"
   },
-  "bugs": "https://github.com/bittricky/lottery-cli/issues",
+  "bugs": "https://github.com/bittricky/jackpot-cli/issues",
   "dependencies": {
     "@oclif/core": "^3",
     "@oclif/plugin-help": "^6",
@@ -41,22 +41,22 @@
     "/dist",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/bittricky/lottery-cli",
+  "homepage": "https://github.com/bittricky/jackpot-cli",
   "keywords": [
     "oclif"
   ],
   "license": "MIT",
   "main": "dist/index.js",
   "oclif": {
-    "bin": "lottery",
-    "dirname": "lottery",
+    "bin": "jackpot",
+    "dirname": "jackpot",
     "commands": "./dist/commands",
     "plugins": [
       "@oclif/plugin-help",
       "@oclif/plugin-plugins"
     ]
   },
-  "repository": "bittricky/lottery-cli",
+  "repository": "bittricky/jackpot-cli",
   "scripts": {
     "build": "shx rm -rf dist && tsc -b",
     "lint": "eslint . --ext .ts",

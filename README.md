@@ -1,4 +1,4 @@
-# lottery-cli
+# jackpot-cli
 
 > Do you feel lucky? Well... Let's roll the dice and find out 🎲.
 
@@ -8,11 +8,9 @@ A command line tool to generate lottery numbers
 
 <!-- toc -->
 
-- [lottery-cli](#lottery-cli)
+- [jackpot-cli](#jackpot-cli)
 - [Usage](#usage)
 - [Commands](#commands)
-- [Support Lotteries](#support-lotteries)
-
 <!-- tocstop -->
 
 # Usage
@@ -24,7 +22,7 @@ $ npm install -g lottery-cli
 $ lottery COMMAND
 running command...
 $ lottery (--version)
-lottery-cli/1.0.0 linux-x64 node-v18.20.3
+lottery-cli/1.0.0 darwin-x64 node-v20.9.0
 $ lottery --help [COMMAND]
 USAGE
   $ lottery COMMAND
@@ -37,17 +35,60 @@ USAGE
 
 <!-- commands -->
 
+- [`lottery generate`](#lottery-generate)
 - [`lottery help [COMMAND]`](#lottery-help-command)
 - [`lottery plugins`](#lottery-plugins)
-- [`lottery plugins add PLUGIN`](#lottery-plugins-add-plugin)
+- [`lottery plugins:add PLUGIN`](#lottery-pluginsadd-plugin)
 - [`lottery plugins:inspect PLUGIN...`](#lottery-pluginsinspect-plugin)
-- [`lottery plugins install PLUGIN`](#lottery-plugins-install-plugin)
-- [`lottery plugins link PATH`](#lottery-plugins-link-path)
-- [`lottery plugins remove [PLUGIN]`](#lottery-plugins-remove-plugin)
-- [`lottery plugins reset`](#lottery-plugins-reset)
-- [`lottery plugins uninstall [PLUGIN]`](#lottery-plugins-uninstall-plugin)
-- [`lottery plugins unlink [PLUGIN]`](#lottery-plugins-unlink-plugin)
-- [`lottery plugins update`](#lottery-plugins-update)
+- [`lottery plugins:install PLUGIN`](#lottery-pluginsinstall-plugin)
+- [`lottery plugins:link PATH`](#lottery-pluginslink-path)
+- [`lottery plugins:remove [PLUGIN]`](#lottery-pluginsremove-plugin)
+- [`lottery plugins:reset`](#lottery-pluginsreset)
+- [`lottery plugins:uninstall [PLUGIN]`](#lottery-pluginsuninstall-plugin)
+- [`lottery plugins:unlink [PLUGIN]`](#lottery-pluginsunlink-plugin)
+- [`lottery plugins:update`](#lottery-pluginsupdate)
+
+## `lottery generate`
+
+Generate lottery numbers for major global lotteries
+
+```
+USAGE
+  $ lottery generate -l <value>
+
+FLAGS
+  -l, --lotto=<value>  (required) type of lottery
+
+DESCRIPTION
+  Generate lottery numbers for major global lotteries
+
+EXAMPLES
+  $ lottery generate --lotto powerball
+
+  $ lottery generate --lotto megamillions
+
+  $ lottery generate --lotto euromillions
+
+  $ lottery generate --lotto uklotto
+
+  $ lottery generate --lotto elgordo
+
+  $ lottery generate --lotto superenalotto
+
+  $ lottery generate --lotto auspowerball
+
+  $ lottery generate --lotto ozlotto
+
+  $ lottery generate --lotto canada649
+
+  $ lottery generate --lotto canadamax
+
+  $ lottery generate --lotto franceloto
+
+  $ lottery generate --lotto germanlotto
+```
+
+_See code: [src/commands/generate.ts](https://github.com/bittricky/lottery-cli/blob/v1.0.0/src/commands/generate.ts)_
 
 ## `lottery help [COMMAND]`
 
@@ -92,13 +133,13 @@ EXAMPLES
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.1.3/src/commands/plugins/index.ts)_
 
-## `lottery plugins add PLUGIN`
+## `lottery plugins:add PLUGIN`
 
 Installs a plugin into lottery.
 
 ```
 USAGE
-  $ lottery plugins add PLUGIN... [--json] [-f] [-h] [-s | -v]
+  $ lottery plugins:add PLUGIN... [--json] [-f] [-h] [-s | -v]
 
 ARGUMENTS
   PLUGIN...  Plugin to install.
@@ -115,7 +156,7 @@ GLOBAL FLAGS
 DESCRIPTION
   Installs a plugin into lottery.
 
-  Uses bundled npm executable to install plugins into /home/runner/.local/share/lottery
+  Uses bundled npm executable to install plugins into /Users/bittricky/.local/share/lottery
 
   Installation of a user-installed plugin will override a core plugin.
 
@@ -123,20 +164,20 @@ DESCRIPTION
   Use the LOTTERY_NPM_REGISTRY environment variable to set the npm registry.
 
 ALIASES
-  $ lottery plugins add
+  $ lottery plugins:add
 
 EXAMPLES
   Install a plugin from npm registry.
 
-    $ lottery plugins add myplugin
+    $ lottery plugins:add myplugin
 
   Install a plugin from a github url.
 
-    $ lottery plugins add https://github.com/someuser/someplugin
+    $ lottery plugins:add https://github.com/someuser/someplugin
 
   Install a plugin from a github slug.
 
-    $ lottery plugins add someuser/someplugin
+    $ lottery plugins:add someuser/someplugin
 ```
 
 ## `lottery plugins:inspect PLUGIN...`
@@ -145,7 +186,7 @@ Displays installation properties of a plugin.
 
 ```
 USAGE
-  $ lottery plugins inspect PLUGIN...
+  $ lottery plugins:inspect PLUGIN...
 
 ARGUMENTS
   PLUGIN...  [default: .] Plugin to inspect.
@@ -161,18 +202,18 @@ DESCRIPTION
   Displays installation properties of a plugin.
 
 EXAMPLES
-  $ lottery plugins inspect myplugin
+  $ lottery plugins:inspect myplugin
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.1.3/src/commands/plugins/inspect.ts)_
 
-## `lottery plugins install PLUGIN`
+## `lottery plugins:install PLUGIN`
 
 Installs a plugin into lottery.
 
 ```
 USAGE
-  $ lottery plugins install PLUGIN... [--json] [-f] [-h] [-s | -v]
+  $ lottery plugins:install PLUGIN... [--json] [-f] [-h] [-s | -v]
 
 ARGUMENTS
   PLUGIN...  Plugin to install.
@@ -189,7 +230,7 @@ GLOBAL FLAGS
 DESCRIPTION
   Installs a plugin into lottery.
 
-  Uses bundled npm executable to install plugins into /home/runner/.local/share/lottery
+  Uses bundled npm executable to install plugins into /Users/bittricky/.local/share/lottery
 
   Installation of a user-installed plugin will override a core plugin.
 
@@ -197,31 +238,31 @@ DESCRIPTION
   Use the LOTTERY_NPM_REGISTRY environment variable to set the npm registry.
 
 ALIASES
-  $ lottery plugins add
+  $ lottery plugins:add
 
 EXAMPLES
   Install a plugin from npm registry.
 
-    $ lottery plugins install myplugin
+    $ lottery plugins:install myplugin
 
   Install a plugin from a github url.
 
-    $ lottery plugins install https://github.com/someuser/someplugin
+    $ lottery plugins:install https://github.com/someuser/someplugin
 
   Install a plugin from a github slug.
 
-    $ lottery plugins install someuser/someplugin
+    $ lottery plugins:install someuser/someplugin
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.1.3/src/commands/plugins/install.ts)_
 
-## `lottery plugins link PATH`
+## `lottery plugins:link PATH`
 
 Links a plugin into the CLI for development.
 
 ```
 USAGE
-  $ lottery plugins link PATH [-h] [--install] [-v]
+  $ lottery plugins:link PATH [-h] [--install] [-v]
 
 ARGUMENTS
   PATH  [default: .] path to plugin
@@ -240,18 +281,18 @@ DESCRIPTION
 
 
 EXAMPLES
-  $ lottery plugins link myplugin
+  $ lottery plugins:link myplugin
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.1.3/src/commands/plugins/link.ts)_
 
-## `lottery plugins remove [PLUGIN]`
+## `lottery plugins:remove [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ lottery plugins remove [PLUGIN...] [-h] [-v]
+  $ lottery plugins:remove [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
   PLUGIN...  plugin to uninstall
@@ -264,20 +305,20 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ lottery plugins unlink
-  $ lottery plugins remove
+  $ lottery plugins:unlink
+  $ lottery plugins:remove
 
 EXAMPLES
-  $ lottery plugins remove myplugin
+  $ lottery plugins:remove myplugin
 ```
 
-## `lottery plugins reset`
+## `lottery plugins:reset`
 
 Remove all user-installed and linked plugins.
 
 ```
 USAGE
-  $ lottery plugins reset [--hard] [--reinstall]
+  $ lottery plugins:reset [--hard] [--reinstall]
 
 FLAGS
   --hard       Delete node_modules and package manager related files in addition to uninstalling plugins.
@@ -286,13 +327,13 @@ FLAGS
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.1.3/src/commands/plugins/reset.ts)_
 
-## `lottery plugins uninstall [PLUGIN]`
+## `lottery plugins:uninstall [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ lottery plugins uninstall [PLUGIN...] [-h] [-v]
+  $ lottery plugins:uninstall [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
   PLUGIN...  plugin to uninstall
@@ -305,22 +346,22 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ lottery plugins unlink
-  $ lottery plugins remove
+  $ lottery plugins:unlink
+  $ lottery plugins:remove
 
 EXAMPLES
-  $ lottery plugins uninstall myplugin
+  $ lottery plugins:uninstall myplugin
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.1.3/src/commands/plugins/uninstall.ts)_
 
-## `lottery plugins unlink [PLUGIN]`
+## `lottery plugins:unlink [PLUGIN]`
 
 Removes a plugin from the CLI.
 
 ```
 USAGE
-  $ lottery plugins unlink [PLUGIN...] [-h] [-v]
+  $ lottery plugins:unlink [PLUGIN...] [-h] [-v]
 
 ARGUMENTS
   PLUGIN...  plugin to uninstall
@@ -333,20 +374,20 @@ DESCRIPTION
   Removes a plugin from the CLI.
 
 ALIASES
-  $ lottery plugins unlink
-  $ lottery plugins remove
+  $ lottery plugins:unlink
+  $ lottery plugins:remove
 
 EXAMPLES
-  $ lottery plugins unlink myplugin
+  $ lottery plugins:unlink myplugin
 ```
 
-## `lottery plugins update`
+## `lottery plugins:update`
 
 Update installed plugins.
 
 ```
 USAGE
-  $ lottery plugins update [-h] [-v]
+  $ lottery plugins:update [-h] [-v]
 
 FLAGS
   -h, --help     Show CLI help.
