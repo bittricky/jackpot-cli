@@ -2,7 +2,11 @@
   "name": "lottery-cli",
   "description": "Command line tool to generate lottery numbers for major lotteries",
   "version": "1.0.0",
-  "author": "Mitul Patel",
+  "author": {
+		"name": "Mitul Patel",
+		"email": "me@mitulpa.tel",
+		"url": "https://mitulpa.tel"
+	},
   "bin": {
     "lottery": "./bin/run.js"
   },
@@ -50,9 +54,7 @@
     "plugins": [
       "@oclif/plugin-help",
       "@oclif/plugin-plugins"
-    ],
-    "topicSeparator": " ",
-    "topics": {}
+    ]
   },
   "repository": "bittricky/lottery-cli",
   "scripts": {
