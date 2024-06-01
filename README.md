@@ -2,19 +2,23 @@
 
 > Do you feel lucky? Well... Let's roll the dice and find out 🎲.
 
-A Command line tool to generate lottery numbers
+A command line tool to generate lottery numbers
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 
 <!-- toc -->
-* [lottery-cli](#lottery-cli)
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [lottery-cli](#lottery-cli)
+- [Usage](#usage)
+- [Commands](#commands)
+- [Support Lotteries](#support-lotteries)
+
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
+
 ```sh-session
 $ npm install -g lottery-cli
 $ lottery COMMAND
@@ -26,22 +30,24 @@ USAGE
   $ lottery COMMAND
 ...
 ```
+
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-* [`lottery help [COMMAND]`](#lottery-help-command)
-* [`lottery plugins`](#lottery-plugins)
-* [`lottery plugins add PLUGIN`](#lottery-plugins-add-plugin)
-* [`lottery plugins:inspect PLUGIN...`](#lottery-pluginsinspect-plugin)
-* [`lottery plugins install PLUGIN`](#lottery-plugins-install-plugin)
-* [`lottery plugins link PATH`](#lottery-plugins-link-path)
-* [`lottery plugins remove [PLUGIN]`](#lottery-plugins-remove-plugin)
-* [`lottery plugins reset`](#lottery-plugins-reset)
-* [`lottery plugins uninstall [PLUGIN]`](#lottery-plugins-uninstall-plugin)
-* [`lottery plugins unlink [PLUGIN]`](#lottery-plugins-unlink-plugin)
-* [`lottery plugins update`](#lottery-plugins-update)
+
+- [`lottery help [COMMAND]`](#lottery-help-command)
+- [`lottery plugins`](#lottery-plugins)
+- [`lottery plugins add PLUGIN`](#lottery-plugins-add-plugin)
+- [`lottery plugins:inspect PLUGIN...`](#lottery-pluginsinspect-plugin)
+- [`lottery plugins install PLUGIN`](#lottery-plugins-install-plugin)
+- [`lottery plugins link PATH`](#lottery-plugins-link-path)
+- [`lottery plugins remove [PLUGIN]`](#lottery-plugins-remove-plugin)
+- [`lottery plugins reset`](#lottery-plugins-reset)
+- [`lottery plugins uninstall [PLUGIN]`](#lottery-plugins-uninstall-plugin)
+- [`lottery plugins unlink [PLUGIN]`](#lottery-plugins-unlink-plugin)
+- [`lottery plugins update`](#lottery-plugins-update)
 
 ## `lottery help [COMMAND]`
 
@@ -351,6 +357,7 @@ DESCRIPTION
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.1.3/src/commands/plugins/update.ts)_
+
 <!-- commandsstop -->
 
 - [`lottery generate`](#lottery-generate)
