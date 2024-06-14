@@ -10,10 +10,11 @@ A command line tool to generate random lottery numbers
 
 <!-- toc -->
 
-- [jackpot-cli](#jackpot-cli)
-- [Usage](#usage)
-- [Commands](#commands)
-- [Supported Lotteries](#supported-lotteries)
+-- [jackpot-cli](#jackpot-cli)
+-- [Usage](#usage)
+-- [Commands](#commands)
+-- [Supported Lotteries](#supported-lotteries)
+
 <!-- tocstop -->
 
 # Usage
