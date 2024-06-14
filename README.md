@@ -2,7 +2,7 @@
 
 > Do you feel lucky? Well... Let's roll the dice and find out 🎲.
 
-A command line tool to generate jackpot numbers
+A command line tool to generate random lottery numbers
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/jackpot-cli.svg)](https://npmjs.org/package/jackpot-cli)
