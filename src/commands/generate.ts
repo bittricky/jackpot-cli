@@ -31,11 +31,26 @@ const VALID_LOTTERIES: LotteryType[] = [
 ]
 
 const generateUniqueNumbers = (count: number, min: number, max: number): number[] => {
-  const numbers: Set<number> = new Set()
-
-  if (count > max - min + 1) {
-    throw new Error(`Cannot generate ${count} unique numbers in range ${min}-${max}`)
+  if (!Number.isInteger(count) || count <= 0) {
+    throw new Error(`Count must be a positive integer, received: ${count}`)
   }
+  if (!Number.isInteger(min)) {
+    throw new Error(`Minimum value must be an integer, received: ${min}`)
+  }
+  if (!Number.isInteger(max)) {
+    throw new Error(`Maximum value must be an integer, received: ${max}`)
+  }
+  if (min >= max) {
+    throw new Error(`Minimum value (${min}) must be less than maximum value (${max})`)
+  }
+  if (count > max - min + 1) {
+    throw new Error(
+      `Cannot generate ${count} unique numbers in range ${min}-${max}. ` +
+        `Only ${max - min + 1} numbers are available in this range.`,
+    )
+  }
+
+  const numbers: Set<number> = new Set()
 
   while (numbers.size < count) {
     const num = randomInt(min, max + 1)
@@ -43,6 +58,17 @@ const generateUniqueNumbers = (count: number, min: number, max: number): number[
   }
 
   return [...numbers].sort((a, b) => a - b)
+}
+
+const formatLotteryNumbers = (numbers: number[], specialBallCount = 0): string => {
+  if (specialBallCount === 0) {
+    return numbers.sort((a, b) => a - b).join(' ')
+  }
+
+  const mainNumbers = numbers.slice(0, -specialBallCount).sort((a, b) => a - b)
+  const specialBalls = numbers.slice(-specialBallCount).sort((a, b) => a - b)
+  
+  return `${mainNumbers.join(' ')} [${specialBalls.join(' ')}]`
 }
 
 const generateLotteryNumbers = (input: string) => {
@@ -56,67 +82,67 @@ const generateLotteryNumbers = (input: string) => {
     case 'powerball': {
       const mainNumbers = generateUniqueNumbers(5, 1, 69)
       const powerballNumber = generateUniqueNumbers(1, 1, 26)
-      return [...mainNumbers, ...powerballNumber]
+      return formatLotteryNumbers([...mainNumbers, ...powerballNumber], 1)
     }
 
     case 'megamillions': {
       const mainNumbers = generateUniqueNumbers(5, 1, 70)
       const megaBallNumber = generateUniqueNumbers(1, 1, 25)
-      return [...mainNumbers, ...megaBallNumber]
+      return formatLotteryNumbers([...mainNumbers, ...megaBallNumber], 1)
     }
 
     case 'euromillions': {
       const mainNumbers = generateUniqueNumbers(5, 1, 50)
       const luckyStars = generateUniqueNumbers(2, 1, 12)
-      return [...mainNumbers, ...luckyStars]
+      return formatLotteryNumbers([...mainNumbers, ...luckyStars], 2)
     }
 
     case 'uklotto': {
       const mainNumbers = generateUniqueNumbers(6, 1, 59)
-      return mainNumbers
+      return formatLotteryNumbers(mainNumbers)
     }
 
     case 'elgordo': {
       const mainNumbers = generateUniqueNumbers(5, 0, 54)
-      return mainNumbers
+      return formatLotteryNumbers(mainNumbers)
     }
 
     case 'superenalotto': {
       const mainNumbers = generateUniqueNumbers(6, 1, 90)
-      return mainNumbers
+      return formatLotteryNumbers(mainNumbers)
     }
 
     case 'auspowerball': {
       const mainNumbers = generateUniqueNumbers(7, 1, 35)
       const powerballNumber = generateUniqueNumbers(1, 1, 20)
-      return [...mainNumbers, ...powerballNumber]
+      return formatLotteryNumbers([...mainNumbers, ...powerballNumber], 1)
     }
 
     case 'ozlotto': {
       const mainNumbers = generateUniqueNumbers(7, 1, 45)
-      return mainNumbers
+      return formatLotteryNumbers(mainNumbers)
     }
 
     case 'canada649': {
       const mainNumbers = generateUniqueNumbers(6, 1, 49)
-      return mainNumbers
+      return formatLotteryNumbers(mainNumbers)
     }
 
     case 'canadamax': {
       const mainNumbers = generateUniqueNumbers(7, 1, 50)
-      return mainNumbers
+      return formatLotteryNumbers(mainNumbers)
     }
 
     case 'franceloto': {
       const mainNumbers = generateUniqueNumbers(5, 1, 49)
       const luckyNumber = generateUniqueNumbers(1, 1, 10)
-      return [...mainNumbers, ...luckyNumber]
+      return formatLotteryNumbers([...mainNumbers, ...luckyNumber], 1)
     }
 
     case 'germanlotto': {
       const mainNumbers = generateUniqueNumbers(6, 1, 49)
       const superzahl = generateUniqueNumbers(1, 0, 9)
-      return [...mainNumbers, ...superzahl]
+      return formatLotteryNumbers([...mainNumbers, ...superzahl], 1)
     }
 
     default: {
@@ -148,14 +174,14 @@ export default class Lottery extends Command {
   }
 
   public async run(): Promise<void> {
-    const {flags} = await this.parse(Lottery)
-
-    const lotteryType = flags.lotto
     try {
-      const numbers = generateLotteryNumbers(lotteryType)
-      const numString = numbers.join(' ')
+      const {flags} = await this.parse(Lottery)
+      const lotteryType = flags.lotto
 
-      const art = `
+      try {
+        const numbers = generateLotteryNumbers(lotteryType)
+
+        const art = `
    ______
   /\\ o o o\\
  /o \\ o o o\\_______
@@ -167,12 +193,23 @@ export default class Lottery extends Command {
         
 Here are your ${lotteryType} numbers:
 
-${numString}
-      `
+${numbers}
+    `
 
-      this.log(art)
-    } catch (error: any) {
-      this.error(error.message)
+        this.log(art)
+      } catch (error) {
+        if (error instanceof Error) {
+          this.error(`Error generating lottery numbers: ${error.message}`)
+        } else {
+          this.error('An unexpected error occurred while generating lottery numbers')
+        }
+      }
+    } catch (error) {
+      if (error instanceof Error) {
+        this.error(`Command error: ${error.message}`)
+      } else {
+        this.error('An unexpected error occurred while running the command')
+      }
     }
   }
 }
