@@ -41,12 +41,20 @@ jobs:
         id: oclif-readme
         run: |
           pnpm install
+          # Save current README content
+          if [ -f README.md ]; then
+            cp README.md README.md.bak
+          fi
+          # Generate new README
           pnpm exec oclif readme
-          if [ -n "$(git status --porcelain)" ]; then
-            git add .
-            git commit -am "chore: update README.md"
+          # Compare and only commit if there are actual changes
+          if [ ! -f README.md.bak ] || ! cmp -s README.md README.md.bak; then
+            git add README.md
+            git commit -m "docs: update README.md with new command documentation"
             git push -u origin ${{ github.ref_name }}
           fi
+          # Clean up
+          rm -f README.md.bak
       - name: Create Github Release
         uses: ncipollo/release-action@2c591bcc8ecdcd2db72b97d6147f871fcd833ba5
         if: ${{ steps.version-check.outputs.skipped == 'false' }}
