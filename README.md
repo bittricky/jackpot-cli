@@ -9,90 +9,41 @@ A command line tool to generate random lottery numbers
 [![Downloads/week](https://img.shields.io/npm/dw/jackpot-cli.svg)](https://www.npmjs.com/package/jackpot-cli)
 
 <!-- toc -->
-
--- [jackpot-cli](#jackpot-cli)
--- [Usage](#usage)
--- [Commands](#commands)
--- [Supported Lotteries](#supported-lotteries)
-
+* [jackpot-cli](#jackpot-cli)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g jackpot-cli
 $ jackpot COMMAND
 running command...
 $ jackpot (--version)
-jackpot-cli/1.0.0 darwin-x64 node-v20.9.0
+jackpot-cli/1.1.0 linux-x64 node-v18.20.5
 $ jackpot --help [COMMAND]
 USAGE
   $ jackpot COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`jackpot generate`](#jackpot-generate)
-- [`jackpot help [COMMAND]`](#jackpot-help-command)
-- [`jackpot plugins`](#jackpot-plugins)
-- [`jackpot plugins:add PLUGIN`](#jackpot-pluginsadd-plugin)
-- [`jackpot plugins:inspect PLUGIN...`](#jackpot-pluginsinspect-plugin)
-- [`jackpot plugins:install PLUGIN`](#jackpot-pluginsinstall-plugin)
-- [`jackpot plugins:link PATH`](#jackpot-pluginslink-path)
-- [`jackpot plugins:remove [PLUGIN]`](#jackpot-pluginsremove-plugin)
-- [`jackpot plugins:reset`](#jackpot-pluginsreset)
-- [`jackpot plugins:uninstall [PLUGIN]`](#jackpot-pluginsuninstall-plugin)
-- [`jackpot plugins:unlink [PLUGIN]`](#jackpot-pluginsunlink-plugin)
-- [`jackpot plugins:update`](#jackpot-pluginsupdate)
-
-## `jackpot generate`
-
-Generate lottery numbers for major global lotteries
-
-```
-USAGE
-  $ jackpot generate -l <value>
-
-FLAGS
-  -l, --lotto=<value>  (required) type of lottery
-
-DESCRIPTION
-  Generate lottery numbers for major global lotteries
-
-EXAMPLES
-  $ jackpot generate --lotto powerball
-
-  $ jackpot generate --lotto megamillions
-
-  $ jackpot generate --lotto euromillions
-
-  $ jackpot generate --lotto uklotto
-
-  $ jackpot generate --lotto elgordo
-
-  $ jackpot generate --lotto superenalotto
-
-  $ jackpot generate --lotto auspowerball
-
-  $ jackpot generate --lotto ozlotto
-
-  $ jackpot generate --lotto canada649
-
-  $ jackpot generate --lotto canadamax
-
-  $ jackpot generate --lotto franceloto
-
-  $ jackpot generate --lotto germanlotto
-```
-
-_See code: [src/commands/generate.ts](https://github.com/bittricky/jackpot-cli/blob/v1.0.0/src/commands/generate.ts)_
+* [`jackpot help [COMMAND]`](#jackpot-help-command)
+* [`jackpot plugins`](#jackpot-plugins)
+* [`jackpot plugins:add PLUGIN`](#jackpot-pluginsadd-plugin)
+* [`jackpot plugins:inspect PLUGIN...`](#jackpot-pluginsinspect-plugin)
+* [`jackpot plugins:install PLUGIN`](#jackpot-pluginsinstall-plugin)
+* [`jackpot plugins:link PATH`](#jackpot-pluginslink-path)
+* [`jackpot plugins:remove [PLUGIN]`](#jackpot-pluginsremove-plugin)
+* [`jackpot plugins:reset`](#jackpot-pluginsreset)
+* [`jackpot plugins:uninstall [PLUGIN]`](#jackpot-pluginsuninstall-plugin)
+* [`jackpot plugins:unlink [PLUGIN]`](#jackpot-pluginsunlink-plugin)
+* [`jackpot plugins:update`](#jackpot-pluginsupdate)
 
 ## `jackpot help [COMMAND]`
 
@@ -112,7 +63,7 @@ DESCRIPTION
   Display help for jackpot.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.0.22/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.2.19/src/commands/help.ts)_
 
 ## `jackpot plugins`
 
@@ -135,7 +86,7 @@ EXAMPLES
   $ jackpot plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.1.3/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.22/src/commands/plugins/index.ts)_
 
 ## `jackpot plugins:add PLUGIN`
 
@@ -160,7 +111,7 @@ GLOBAL FLAGS
 DESCRIPTION
   Installs a plugin into jackpot.
 
-  Uses bundled npm executable to install plugins into /Users/bittricky/.local/share/jackpot
+  Uses npm to install plugins.
 
   Installation of a user-installed plugin will override a core plugin.
 
@@ -209,7 +160,7 @@ EXAMPLES
   $ jackpot plugins:inspect myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.1.3/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.22/src/commands/plugins/inspect.ts)_
 
 ## `jackpot plugins:install PLUGIN`
 
@@ -234,7 +185,7 @@ GLOBAL FLAGS
 DESCRIPTION
   Installs a plugin into jackpot.
 
-  Uses bundled npm executable to install plugins into /Users/bittricky/.local/share/jackpot
+  Uses npm to install plugins.
 
   Installation of a user-installed plugin will override a core plugin.
 
@@ -258,7 +209,7 @@ EXAMPLES
     $ jackpot plugins:install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.1.3/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.22/src/commands/plugins/install.ts)_
 
 ## `jackpot plugins:link PATH`
 
@@ -278,6 +229,7 @@ FLAGS
 
 DESCRIPTION
   Links a plugin into the CLI for development.
+
   Installation of a linked plugin will override a user-installed or core plugin.
 
   e.g. If you have a user-installed or core plugin that has a 'hello' command, installing a linked plugin with a 'hello'
@@ -288,7 +240,7 @@ EXAMPLES
   $ jackpot plugins:link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.1.3/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.22/src/commands/plugins/link.ts)_
 
 ## `jackpot plugins:remove [PLUGIN]`
 
@@ -329,7 +281,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.1.3/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.22/src/commands/plugins/reset.ts)_
 
 ## `jackpot plugins:uninstall [PLUGIN]`
 
@@ -357,7 +309,7 @@ EXAMPLES
   $ jackpot plugins:uninstall myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.1.3/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.22/src/commands/plugins/uninstall.ts)_
 
 ## `jackpot plugins:unlink [PLUGIN]`
 
@@ -401,8 +353,7 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.1.3/src/commands/plugins/update.ts)_
-
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.22/src/commands/plugins/update.ts)_
 <!-- commandsstop -->
 
 - [`jackpot generate`](#jackpot-generate)
