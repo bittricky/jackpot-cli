@@ -9,48 +9,42 @@ A command line tool to generate random lottery numbers
 [![Downloads/week](https://img.shields.io/npm/dw/jackpot-cli.svg)](https://www.npmjs.com/package/jackpot-cli)
 
 <!-- toc -->
-
--- [jackpot-cli](#jackpot-cli)
--- [Usage](#usage)
--- [Commands](#commands)
--- [Supported Lotteries](#supported-lotteries)
-
+* [jackpot-cli](#jackpot-cli)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g jackpot-cli
 $ jackpot COMMAND
 running command...
 $ jackpot (--version)
-jackpot-cli/1.0.0 darwin-x64 node-v20.9.0
+jackpot-cli/1.1.0 darwin-x64 node-v20.9.0
 $ jackpot --help [COMMAND]
 USAGE
   $ jackpot COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`jackpot generate`](#jackpot-generate)
-- [`jackpot help [COMMAND]`](#jackpot-help-command)
-- [`jackpot plugins`](#jackpot-plugins)
-- [`jackpot plugins:add PLUGIN`](#jackpot-pluginsadd-plugin)
-- [`jackpot plugins:inspect PLUGIN...`](#jackpot-pluginsinspect-plugin)
-- [`jackpot plugins:install PLUGIN`](#jackpot-pluginsinstall-plugin)
-- [`jackpot plugins:link PATH`](#jackpot-pluginslink-path)
-- [`jackpot plugins:remove [PLUGIN]`](#jackpot-pluginsremove-plugin)
-- [`jackpot plugins:reset`](#jackpot-pluginsreset)
-- [`jackpot plugins:uninstall [PLUGIN]`](#jackpot-pluginsuninstall-plugin)
-- [`jackpot plugins:unlink [PLUGIN]`](#jackpot-pluginsunlink-plugin)
-- [`jackpot plugins:update`](#jackpot-pluginsupdate)
+* [`jackpot generate`](#jackpot-generate)
+* [`jackpot help [COMMAND]`](#jackpot-help-command)
+* [`jackpot plugins`](#jackpot-plugins)
+* [`jackpot plugins:add PLUGIN`](#jackpot-pluginsadd-plugin)
+* [`jackpot plugins:inspect PLUGIN...`](#jackpot-pluginsinspect-plugin)
+* [`jackpot plugins:install PLUGIN`](#jackpot-pluginsinstall-plugin)
+* [`jackpot plugins:link PATH`](#jackpot-pluginslink-path)
+* [`jackpot plugins:remove [PLUGIN]`](#jackpot-pluginsremove-plugin)
+* [`jackpot plugins:reset`](#jackpot-pluginsreset)
+* [`jackpot plugins:uninstall [PLUGIN]`](#jackpot-pluginsuninstall-plugin)
+* [`jackpot plugins:unlink [PLUGIN]`](#jackpot-pluginsunlink-plugin)
+* [`jackpot plugins:update`](#jackpot-pluginsupdate)
 
 ## `jackpot generate`
 
@@ -67,32 +61,32 @@ DESCRIPTION
   Generate lottery numbers for major global lotteries
 
 EXAMPLES
-  $ jackpot generate --lotto powerball
-
-  $ jackpot generate --lotto megamillions
-
-  $ jackpot generate --lotto euromillions
-
-  $ jackpot generate --lotto uklotto
-
-  $ jackpot generate --lotto elgordo
-
-  $ jackpot generate --lotto superenalotto
-
   $ jackpot generate --lotto auspowerball
-
-  $ jackpot generate --lotto ozlotto
 
   $ jackpot generate --lotto canada649
 
   $ jackpot generate --lotto canadamax
 
+  $ jackpot generate --lotto elgordo
+
+  $ jackpot generate --lotto euromillions
+
   $ jackpot generate --lotto franceloto
 
   $ jackpot generate --lotto germanlotto
+
+  $ jackpot generate --lotto megamillions
+
+  $ jackpot generate --lotto ozlotto
+
+  $ jackpot generate --lotto powerball
+
+  $ jackpot generate --lotto superenalotto
+
+  $ jackpot generate --lotto uklotto
 ```
 
-_See code: [src/commands/generate.ts](https://github.com/bittricky/jackpot-cli/blob/v1.0.0/src/commands/generate.ts)_
+_See code: [src/commands/generate.ts](https://github.com/bittricky/jackpot-cli/blob/v1.1.0/src/commands/generate.ts)_
 
 ## `jackpot help [COMMAND]`
 
@@ -402,7 +396,6 @@ DESCRIPTION
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.1.3/src/commands/plugins/update.ts)_
-
 <!-- commandsstop -->
 
 - [`jackpot generate`](#jackpot-generate)
