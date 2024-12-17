@@ -77,8 +77,12 @@ Here are your`
   it('should throw an error for unsupported lottery type', async () => {
     try {
       await runCommand(['generate', '--lotto', 'unsupported'])
-    } catch (error: any) {
-      expect(error.message).to.include('Unsupported lottery type')
+    } catch (error) {
+      if (error instanceof Error) {
+        expect(error.message).to.include('Unsupported lottery type')
+      } else {
+        throw error
+      }
     }
   })
 })
