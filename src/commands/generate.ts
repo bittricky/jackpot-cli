@@ -1,5 +1,34 @@
 import {Command, Flags} from '@oclif/core'
 
+type LotteryType =
+  | 'powerball'
+  | 'megamillions'
+  | 'euromillions'
+  | 'uklotto'
+  | 'elgordo'
+  | 'superenalotto'
+  | 'auspowerball'
+  | 'ozlotto'
+  | 'canada649'
+  | 'canadamax'
+  | 'franceloto'
+  | 'germanlotto'
+
+const VALID_LOTTERIES: LotteryType[] = [
+  'powerball',
+  'megamillions',
+  'euromillions',
+  'uklotto',
+  'elgordo',
+  'superenalotto',
+  'auspowerball',
+  'ozlotto',
+  'canada649',
+  'canadamax',
+  'franceloto',
+  'germanlotto',
+]
+
 const generateUniqueNumbers = (count: number, min: number, max: number) => {
   const numbers = new Set()
   while (numbers.size < count) {
@@ -10,7 +39,13 @@ const generateUniqueNumbers = (count: number, min: number, max: number) => {
   return [...numbers]
 }
 
-const generateLotteryNumbers = (lotteryType: string) => {
+const generateLotteryNumbers = (input: string) => {
+  const lotteryType = input.toLowerCase() as LotteryType
+
+  if (!VALID_LOTTERIES.includes(lotteryType)) {
+    throw new Error(`Unsupported lottery type: "${input}"\n\nValid options are:\n${VALID_LOTTERIES.join('\n')}`)
+  }
+
   switch (lotteryType) {
     case 'powerball': {
       const mainNumbers = generateUniqueNumbers(5, 1, 69)
