@@ -1,4 +1,5 @@
 import {Command, Flags} from '@oclif/core'
+import {randomInt} from 'crypto'
 
 type LotteryType =
   | 'powerball'
@@ -29,14 +30,19 @@ const VALID_LOTTERIES: LotteryType[] = [
   'germanlotto',
 ]
 
-const generateUniqueNumbers = (count: number, min: number, max: number) => {
-  const numbers = new Set()
+const generateUniqueNumbers = (count: number, min: number, max: number): number[] => {
+  const numbers: Set<number> = new Set()
+
+  if (count > max - min + 1) {
+    throw new Error(`Cannot generate ${count} unique numbers in range ${min}-${max}`)
+  }
+
   while (numbers.size < count) {
-    const num = Math.floor(Math.random() * (max - min + 1) + min)
+    const num = randomInt(min, max + 1)
     numbers.add(num)
   }
 
-  return [...numbers]
+  return [...numbers].sort((a, b) => a - b)
 }
 
 const generateLotteryNumbers = (input: string) => {

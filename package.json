@@ -3,10 +3,10 @@
   "description": "Command line tool to generate lottery numbers for major lotteries",
   "version": "1.0.0",
   "author": {
-		"name": "Mitul Patel",
-		"email": "me@mitulpa.tel",
-		"url": "https://mitulpa.tel"
-	},
+    "name": "Mitul Patel",
+    "email": "me@mitulpa.tel",
+    "url": "https://mitulpa.tel"
+  },
   "bin": {
     "jackpot": "./bin/run.js"
   },
@@ -14,7 +14,8 @@
   "dependencies": {
     "@oclif/core": "^3",
     "@oclif/plugin-help": "^6",
-    "@oclif/plugin-plugins": "^5"
+    "@oclif/plugin-plugins": "^5",
+    "crypto": "^1.0.1"
   },
   "devDependencies": {
     "@oclif/prettier-config": "^0.2.1",
