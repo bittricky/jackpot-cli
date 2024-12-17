@@ -59,6 +59,7 @@
   },
   "repository": "bittricky/jackpot-cli",
   "scripts": {
+    "dev": "./bin/run.js",
     "build": "shx rm -rf dist && tsc -b",
     "lint": "eslint . --ext .ts",
     "postpack": "shx rm -f oclif.manifest.json",
