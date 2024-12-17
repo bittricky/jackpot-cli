@@ -60,7 +60,8 @@ const LOTTERY_CONFIGS: Record<LotteryType, LotteryConfig> = {
     mainNumbers: {count: 6, min: 1, max: 59},
   },
   elgordo: {
-    mainNumbers: {count: 5, min: 0, max: 54},
+    mainNumbers: {count: 5, min: 1, max: 54},
+    specialBalls: {count: 1, min: 0, max: 9},
   },
   superenalotto: {
     mainNumbers: {count: 6, min: 1, max: 90},
@@ -125,7 +126,7 @@ const formatLotteryNumbers = (numbers: number[], specialBallCount = 0): string =
 
   const mainNumbers = numbers.slice(0, -specialBallCount).sort((a, b) => a - b)
   const specialBalls = numbers.slice(-specialBallCount).sort((a, b) => a - b)
-  
+
   return `${mainNumbers.join(' ')} [${specialBalls.join(' ')}]`
 }
 
@@ -137,17 +138,13 @@ const generateLotteryNumbers = (input: string): string => {
   }
 
   const config = LOTTERY_CONFIGS[lotteryType]
-  const mainNumbers = generateUniqueNumbers(
-    config.mainNumbers.count,
-    config.mainNumbers.min,
-    config.mainNumbers.max
-  )
+  const mainNumbers = generateUniqueNumbers(config.mainNumbers.count, config.mainNumbers.min, config.mainNumbers.max)
 
   if (config.specialBalls) {
     const specialBalls = generateUniqueNumbers(
       config.specialBalls.count,
       config.specialBalls.min,
-      config.specialBalls.max
+      config.specialBalls.max,
     )
     return formatLotteryNumbers([...mainNumbers, ...specialBalls], config.specialBalls.count)
   }
