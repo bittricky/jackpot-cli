@@ -9,16 +9,14 @@ A command line tool to generate random lottery numbers
 [![Downloads/week](https://img.shields.io/npm/dw/jackpot-cli.svg)](https://www.npmjs.com/package/jackpot-cli)
 
 <!-- toc -->
-
-- [jackpot-cli](#jackpot-cli)
-- [Usage](#usage)
-- [Commands](#commands)
+* [jackpot-cli](#jackpot-cli)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g jackpot-cli
 $ jackpot COMMAND
@@ -30,24 +28,22 @@ USAGE
   $ jackpot COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [`jackpot help [COMMAND]`](#jackpot-help-command)
-- [`jackpot plugins`](#jackpot-plugins)
-- [`jackpot plugins:add PLUGIN`](#jackpot-pluginsadd-plugin)
-- [`jackpot plugins:inspect PLUGIN...`](#jackpot-pluginsinspect-plugin)
-- [`jackpot plugins:install PLUGIN`](#jackpot-pluginsinstall-plugin)
-- [`jackpot plugins:link PATH`](#jackpot-pluginslink-path)
-- [`jackpot plugins:remove [PLUGIN]`](#jackpot-pluginsremove-plugin)
-- [`jackpot plugins:reset`](#jackpot-pluginsreset)
-- [`jackpot plugins:uninstall [PLUGIN]`](#jackpot-pluginsuninstall-plugin)
-- [`jackpot plugins:unlink [PLUGIN]`](#jackpot-pluginsunlink-plugin)
-- [`jackpot plugins:update`](#jackpot-pluginsupdate)
+* [`jackpot help [COMMAND]`](#jackpot-help-command)
+* [`jackpot plugins`](#jackpot-plugins)
+* [`jackpot plugins:add PLUGIN`](#jackpot-pluginsadd-plugin)
+* [`jackpot plugins:inspect PLUGIN...`](#jackpot-pluginsinspect-plugin)
+* [`jackpot plugins:install PLUGIN`](#jackpot-pluginsinstall-plugin)
+* [`jackpot plugins:link PATH`](#jackpot-pluginslink-path)
+* [`jackpot plugins:remove [PLUGIN]`](#jackpot-pluginsremove-plugin)
+* [`jackpot plugins:reset`](#jackpot-pluginsreset)
+* [`jackpot plugins:uninstall [PLUGIN]`](#jackpot-pluginsuninstall-plugin)
+* [`jackpot plugins:unlink [PLUGIN]`](#jackpot-pluginsunlink-plugin)
+* [`jackpot plugins:update`](#jackpot-pluginsupdate)
 
 ## `jackpot help [COMMAND]`
 
@@ -358,7 +354,6 @@ DESCRIPTION
 ```
 
 _See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.22/src/commands/plugins/update.ts)_
-
 <!-- commandsstop -->
 
 - [`jackpot generate`](#jackpot-generate)
